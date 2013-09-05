@@ -1,4 +1,4 @@
 DEMO API
-To add a file : **POST	/upload**						
-To list all files : **GET		/allFiles**					
-To retrive a file : **GET     /file/:filename**
+To add a file :        **POST	/upload**						
+To list all files :      **GET		/allFiles**					
+To retrive a file :   **GET     /file/:filename**
