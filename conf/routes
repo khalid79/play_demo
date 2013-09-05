@@ -1,0 +1,7 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+POST	/upload							controllers.Application.uploadFile
+GET		/allFiles						controllers.Application.allFiles
+GET     /file/:filename					controllers.Application.file(filename)
