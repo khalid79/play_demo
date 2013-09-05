@@ -17,17 +17,11 @@ object Application extends Controller {
 				Logger.info(" -------------> upload      : " + Mongo.addFile(file))
 			}
 		}
-		Ok("File has been uploaded")
+		Redirect(routes.Application.allFiles)
 	}
 
 	def allFiles = Action { request =>
-		var html = "<ul>"
-		Mongo.gridfs.toList.map { file =>
-			val filename = file.filename.get
-			html += "<li> <a href='/file/%s' > %s </a> </li>".format(filename,filename)
-		}
-		html += "</ul>"
-		Ok(html).as(HTML)
+		Ok(views.html.index(Mongo.gridfs.toList.map(_.filename.get)))
 	}
 
 	def file(filename: String) = Action { implicit request => 

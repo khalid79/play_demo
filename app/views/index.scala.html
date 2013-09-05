@@ -1,0 +1,13 @@
+@(files: List[String])
+<html>
+	<head></head>
+	<body>
+		<form action="/upload" enctype="multipart/form-data" method="post">
+			<input type="file" name="_file" value="file" title="file input" multiple="true">
+			<button type="submit" class="btn">Upload</button>
+		</form>
+		<ul>
+			@files.map{ file => <li> <a href='/file/@file' > @file </a></li>}
+		</ul> 
+	</body>
+</html>

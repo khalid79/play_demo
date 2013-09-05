@@ -13,8 +13,7 @@ object ApplicationBuild extends Build {
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
       resolvers += Resolver.url("Violas Play Modules", url("http://www.joergviola.de/releases/"))(Resolver.ivyStylePatterns),
-      resolvers += "repo.novus releases" at "http://repo.novus.com/releases/",
-      templatesImport += "util.i18n.html.jsMessages"
+      resolvers += "repo.novus releases" at "http://repo.novus.com/releases/"
     )
 
 }
